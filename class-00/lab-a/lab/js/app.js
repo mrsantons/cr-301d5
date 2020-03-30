@@ -59,7 +59,7 @@ function handleClick(event) {
     showList();
     makeChart();
   }
-  for(const i = 0; i < names.length; i++){
+  for(let i = 0; i < names.length; i++){
     if(event.target.id === allProducts[i].name) {
       allProducts[i].votes += 1;
       console.log(event.target.id + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views');
@@ -71,8 +71,8 @@ function handleClick(event) {
 }
 
 function showList() {
-  for(const i = 0; i < allProducts.length; i++) {
-    const liEl = document.createElement('li');
+  for(let i = 0; i < allProducts.length; i++) {
+    let liEl = document.createElement('li');
     liEl.textContent = allProducts[i].name + ' has ' + allProducts[i].votes + ' votes in ' + allProducts[i].views + ' views';
     list.appendChild(liEl);
   }
@@ -88,7 +88,7 @@ function makeChartData(){
 
 function makeChart(){
   makeChartData();
-  const ctx = document.getElementById('chartypants').getContext('2d');
+  let ctx = document.getElementById('chartypants').getContext('2d');
   new Chart(ctx, { //eslint-disable-line
     type: 'bar',
     data: {
