@@ -6,15 +6,15 @@ const leftImage = document.getElementById('left');
 const centerImage = document.getElementById('center');
 const rightImage = document.getElementById('right');
 
-const allProducts = [];
+let allProducts = [];
 const container = document.getElementById('image_container');
-const viewed = [];
-const labels = [];
+let viewed = [];
+let labels = [];
 const pics = [leftImage, centerImage, rightImage];
 const list = document.getElementById('productlist');
-const totalClicks = 0;
-const views = [];
-const votes = [];
+let totalClicks = 0;
+let views = [];
+let votes = [];
 
 function Product(name) {
   this.name = name;
@@ -30,14 +30,14 @@ function makeRandom() {
 
 function displayPics(){
   while(viewed.length < 6){
-    let rando = makeRandom();
+   let rando = makeRandom();
     while(!viewed.includes(rando)){
       viewed.push(rando);
     }
   }
   // console.log(rando);
   // TODO: In a sentence or two, explain why the previous line of code threw an error when we changed the variable declaration from `const to `const`.
-  // PUT YOUR RESPONSE IN THIS COMMENT
+  // The previous line threw and error becuase const cannot be changed (constant) and we need to make changes to this variable. 
   console.log(viewed);
 
   for (let i = 0; i < 3; i++){
